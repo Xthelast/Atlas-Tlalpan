@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'AktivGroteskEx';
+    src: url('assets/fonts/AktivGroteskEx-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'AktivGroteskEx', sans-serif;
+  }
+
+  header {
+    background-color: #773357; /* Cambia este color por el que prefieras */
+    height: 100px; /* Altura fija */
+    width: 100%; /* Ancho completo */
+    position: fixed; /* Fijo en la parte superior */
+    top: 0; /* Parte superior */
+    left: 0; /* Parte izquierda */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    color: white; /* Color del texto */
+    text-align: right; /* Centrar el texto */
+    font-size: 24px; /* Tamaño del texto */
+    display: flex; /* Para centrar el texto vertical y horizontal */
+    align-items: center; /* Centrado vertical */
+    justify-content: left; /* Centrado horizontal */
+  }
+  header img {
+    margin-left: 25px; /* Separación del logo */
+  }
+  h1 {
+    margin-left: 100px; /* Separación del título */
+  }
+  #map {
+    height: 600px; /* Altura de tu mapa, ajusta a lo que necesites */
+    margin-top: 150px; /* IMPORTANTE: separa el mapa 100px hacia abajo */
+    justify-content: center;
+    background-color: lightgray
+  }
+
+  .leaflet-control-attribution {
+    display: none; /* Oculta la atribución de Leaflet */
+  }
+
+  #layer-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 1000;
+  }
+  
+  #layer-selector label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
+    color: #444;
+  }
+  
+  #select-layer {
+    width: 105px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  #download-button {
+    position: absolute;
+    top: 180px;
+    left: 10px;
+    z-index: 1000;
+  }
+  
+  #download-button button {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+  }
+  
+  #download-button button:hover {
+    background-color: #246b44;
+  }
+
+  .leaflet-control-basemaps .basemap {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+.leaflet-control-basemaps .basemap:hover {
+  transform: scale(1.05);
+}
