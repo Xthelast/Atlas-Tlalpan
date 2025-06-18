@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas de Tlalpan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <img src="assets\LOGO_DORADO_BLANCO_HORIZONTAL.svg" alt="Logo de Tlalpan" class="logo" width="200">
+        <h1>Nuestro Tlalpan</h1>
+    </header>
+      
+    <select id="layerSelector" style="position: absolute; top: 121px; left: 10px; z-index: 1000; padding: 5px;">
+        <option value="">-- Selecciona una capa --</option>
+        <option value="layer1">Pueblos Originarios</option>
+        <option value="layer2">Suelo de Conservación</option>
+        <option value="layer3">Colonias</option>
+        <option value="layer4">AGEB Urbana</option>
+        <option value="layer5">Áreas Naturales Protegidas</option>
+        <!--option value="layer6">Capa 6</option>
+        <option value="layer7">Capa 7</option>
+        <option value="layer8">Capa 8</option>
+        <option value="layer9">Capa 9</option>
+        <option value="layer10">Capa 10</option-->
+    </select>
+
+    <div id="map"></div>
+    <script src="js/mag_general.js"></script>
+  
+</body>
+</html>
