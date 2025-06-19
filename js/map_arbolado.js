@@ -103,23 +103,21 @@ fetch('data/arbolado_1_inventado.geojson')
 
 // ZOOM DINÁMICO
 map.on('zoomend', function () {
-    var zoomLevel = map.getZoom();
-
-    // Mostrar capas según el zoom, pero mantener entidadLayer SIEMPRE
-    if (zoomLevel < 14) {
-        if (map.hasLayer(coloniasLayer)) map.removeLayer(coloniasLayer);
-        if (map.hasLayer(arboladoLayer)) map.removeLayer(arboladoLayer);
-    } 
-    else if (zoomLevel >= 13 && zoomLevel < 15) {
-        if (!map.hasLayer(coloniasLayer)) map.addLayer(coloniasLayer);
-        if (map.hasLayer(arboladoLayer)) map.removeLayer(arboladoLayer);
-    } 
-    else {
-        if (!map.hasLayer(arboladoLayer)) map.addLayer(arboladoLayer);
-        if (map.hasLayer(coloniasLayer)) map.removeLayer(coloniasLayer);
-    }
+  const z = map.getZoom();
+  if (z < 14) {
+    if (!map.hasLayer(entidadLayer)) map.addLayer(entidadLayer);
+    if (map.hasLayer(coloniasLayer)) map.removeLayer(coloniasLayer);
+    if (map.hasLayer(arboladoLayer)) map.removeLayer(arboladoLayer);
+  } else if (z >= 13 && z < 15) {
+    if (map.hasLayer(entidadLayer)) map.removeLayer(entidadLayer);
+    if (!map.hasLayer(coloniasLayer)) map.addLayer(coloniasLayer);
+    if (map.hasLayer(arboladoLayer)) map.removeLayer(arboladoLayer);
+  } else {
+    if (map.hasLayer(entidadLayer)) map.removeLayer(entidadLayer);
+    if (map.hasLayer(coloniasLayer)) map.removeLayer(coloniasLayer);
+    if (!map.hasLayer(arboladoLayer)) map.addLayer(arboladoLayer);
+  }
 });
-
 
 // BASEMAPS SWITCHER
 new L.basemapsSwitcher([
