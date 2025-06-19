@@ -1,0 +1,213 @@
+/* =========================
+   FUENTE PERSONALIZADA
+   ========================= */
+@font-face {
+  font-family: 'AktivGroteskEx';
+  src: url('assets/fonts/AktivGroteskEx-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =========================
+   RESETEO BÁSICO Y BODY
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'AktivGroteskEx', sans-serif;
+  padding-top: 110px; /* Para no tapar con el header */
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =========================
+   HEADER SUPERIOR FIJO
+   ========================= */
+header {
+  background-color: #773357;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-left: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+  max-width: 180px;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+/* =========================
+   MAPA
+   ========================= */
+#map {
+  height: 90vh;
+  width: 100%;
+  background-color: lightgray;
+  z-index: 0;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+/* =========================
+   SELECTOR DE CAPAS
+   ========================= */
+#layer-selector {
+  position: absolute;
+  top: 120px;
+  right: 10px;
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 1000;
+}
+
+#layer-selector label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+  color: #444;
+}
+
+#select-layer {
+  width: 105px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* =========================
+   BOTÓN DE DESCARGA
+   ========================= */
+#download-button {
+  position: absolute;
+  top: 180px;
+  left: 10px;
+  z-index: 1000;
+}
+
+#download-button button {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+#download-button button:hover {
+  background-color: #246b44;
+}
+
+/* =========================
+   BASEMAPS SWITCHER
+   ========================= */
+.leaflet-control-basemaps .basemap {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.leaflet-control-basemaps .basemap:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   NAVEGACIÓN SUPERIOR
+   ========================= */
+nav {
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 10px;
+  text-align: center;
+  z-index: 999;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #773357;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: #5a2440;
+  text-decoration: underline;
+}
+
+/* =========================
+   LEYENDA (OPCIONAL)
+   ========================= */
+.legend {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  background: white;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* =========================
+   RESPONSIVE (MÓVIL)
+   ========================= */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  #layer-selector {
+    top: 170px;
+    left: 10px;
+    right: auto;
+  }
+
+  #download-button {
+    top: 240px;
+    left: 10px;
+  }
+
+  nav {
+    top: auto;
+    bottom: 0;
+    position: fixed;
+  }
+} 
