@@ -2,8 +2,8 @@ var map= L.map('map').setView([19.2883, -99.1671], 11);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { 
 }).addTo(map);
 
-var contenidoPopup = 
-        <div style="text-align: center;">
+var contenidoPopup = `
+    <div style="text-align: center;">
         <h4>Alcaldía Tlalpan</h4>
         <img src="assets/Logo AT Horizontal guinda.svg" 
              alt="Logo Dorado Blanco" 
@@ -19,7 +19,8 @@ var contenidoPopup =
             Más información en: <a href="https://tlalpan.cdmx.gob.mx/" target="_blank">Tlalpan</a>
         </p>
     </div>
-;
+`;
+
 
 var PuntoA = L.marker([19.288353439487146, -99.16716951534852])
     .bindPopup(contenidoPopup)
