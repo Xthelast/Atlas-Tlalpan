@@ -3,7 +3,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 var contenidoPopup = 
-    <div style="text-align: center;">
+        <div style="text-align: center;">
         <h4>Alcaldía Tlalpan</h4>
         <img src="assets/Logo AT Horizontal guinda.svg" 
              alt="Logo Dorado Blanco" 
